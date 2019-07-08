@@ -39,9 +39,19 @@
 
 
 <script type="text/javascript">
-
-	// your solution here
-
+  $(document).ready(() => {
+    var timer = setInterval(buttonMaker, 1000);
+    function buttonMaker() {
+      var $newButton = $("<div class='p2-circle bg-blue'></div>");
+      $('.shape-container').append($newButton);
+    }
+    function stopFunc() {
+      clearInterval(timer);
+    }
+    $('.btn.btn-light.float-right').on('click', () => {
+      stopFunc();
+    })
+  })
 </script>
 </body>
 </html>
